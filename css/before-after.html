@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/*-------obj-------*/
+.box{
+	width:100px;
+	height:100px;
+	text-align:center;
+	margin:10px;
+}
+
+
+.b1{
+  position: relative;
+	background:#ccc;
+	border:#ff0000 2px solid;
+}
+.b2{
+	border:red 2px solid;
+}
+.b3{
+	border:orange 2px solid;
+}
+
+.b1::before{
+  position: absolute;
+  top:-12px;
+  content: '';
+	width:0px;
+	height:0px;
+	border-width:5px;
+	border-style: solid;
+	border-color:transparent transparent #ff0000 transparent;
+	z-index:1;
+}
+
+.b2::before{
+  content: 'NEW!';
+	background:red;
+	color:#fff;
+	margin-right:10px;
+}
+</style>
+</head>
+<body>
+<div class="box b1">01</div>
+
+<p class="b2">02</p>
+<p class="b2">02</p>
+<p class="b2">02</p>
+<p class="b2">02</p>
+
+<div class="box b3">03</div>
+</body>
+</html>
